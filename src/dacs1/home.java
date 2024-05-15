@@ -124,7 +124,7 @@ public class home extends javax.swing.JFrame {
         ResultSet rs = Select.getData("SELECT * FROM room");
         try {
             while (rs.next()) {
-                model.addRow(new Object[]{rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)});
+                model.addRow(new Object[]{rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)});
             }
             rs.close();
         } catch (Exception e) {
@@ -481,9 +481,14 @@ public class home extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Room Number", "Room Type", "Bed", "Price", "Status", "Image"
+                "Room Number", "Room Type", "Bed", "Price", "Image", "Status"
             }
         ));
+        jtbManageRoom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtbManageRoomMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jtbManageRoom);
 
         lbRoomNumberM.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -496,6 +501,11 @@ public class home extends javax.swing.JFrame {
 
         cbRoomTypeM.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cbRoomTypeM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "None-AC" }));
+        cbRoomTypeM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbRoomTypeMActionPerformed(evt);
+            }
+        });
 
         lbBedM.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lbBedM.setText("Bed                   :");
@@ -507,6 +517,11 @@ public class home extends javax.swing.JFrame {
         lbPriceM.setText("Price                 :");
 
         tfPriceM.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tfPriceM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfPriceMActionPerformed(evt);
+            }
+        });
 
         kbtnAddRoom.setText("Add Room");
         kbtnAddRoom.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -524,18 +539,33 @@ public class home extends javax.swing.JFrame {
         kButton1.setkHoverEndColor(new java.awt.Color(0, 204, 204));
         kButton1.setkHoverForeGround(new java.awt.Color(255, 255, 255));
         kButton1.setkHoverStartColor(new java.awt.Color(135, 255, 0));
+        kButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton1ActionPerformed(evt);
+            }
+        });
 
         kbtnUpdateRoom.setText("Update Room");
         kbtnUpdateRoom.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         kbtnUpdateRoom.setkHoverEndColor(new java.awt.Color(0, 204, 204));
         kbtnUpdateRoom.setkHoverForeGround(new java.awt.Color(255, 255, 255));
         kbtnUpdateRoom.setkHoverStartColor(new java.awt.Color(135, 255, 0));
+        kbtnUpdateRoom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kbtnUpdateRoomActionPerformed(evt);
+            }
+        });
 
         kbtnFindRoom.setText("Find Room");
         kbtnFindRoom.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         kbtnFindRoom.setkHoverEndColor(new java.awt.Color(0, 204, 204));
         kbtnFindRoom.setkHoverForeGround(new java.awt.Color(255, 255, 255));
         kbtnFindRoom.setkHoverStartColor(new java.awt.Color(135, 255, 0));
+        kbtnFindRoom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kbtnFindRoomActionPerformed(evt);
+            }
+        });
 
         kbtnResetMR.setText("Reset");
         kbtnResetMR.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -544,19 +574,26 @@ public class home extends javax.swing.JFrame {
         kbtnResetMR.setkHoverForeGround(new java.awt.Color(255, 255, 255));
         kbtnResetMR.setkHoverStartColor(new java.awt.Color(255, 204, 204));
         kbtnResetMR.setkStartColor(new java.awt.Color(255, 102, 102));
+        kbtnResetMR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kbtnResetMRActionPerformed(evt);
+            }
+        });
 
         kbtnUploadImg.setText("Upload");
         kbtnUploadImg.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         kbtnUploadImg.setkHoverEndColor(new java.awt.Color(0, 204, 204));
         kbtnUploadImg.setkHoverForeGround(new java.awt.Color(255, 255, 255));
         kbtnUploadImg.setkHoverStartColor(new java.awt.Color(135, 255, 0));
+        kbtnUploadImg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kbtnUploadImgActionPerformed(evt);
+            }
+        });
 
         lbPicture.setText("Picture:");
 
         lbImgContainer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        lbImgContainer.setMaximumSize(new java.awt.Dimension(6, 6));
-        lbImgContainer.setMinimumSize(new java.awt.Dimension(6, 6));
-        lbImgContainer.setPreferredSize(new java.awt.Dimension(6, 6));
 
         javax.swing.GroupLayout kGPBackground1Layout = new javax.swing.GroupLayout(kGPBackground1);
         kGPBackground1.setLayout(kGPBackground1Layout);
@@ -647,7 +684,7 @@ public class home extends javax.swing.JFrame {
                         .addComponent(lbImgContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1098,7 +1135,7 @@ public class home extends javax.swing.JFrame {
         );
         cardCustomerCheckOutLayout.setVerticalGroup(
             cardCustomerCheckOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+            .addGap(0, 716, Short.MAX_VALUE)
             .addGroup(cardCustomerCheckOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(cardCustomerCheckOutLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1212,7 +1249,7 @@ public class home extends javax.swing.JFrame {
         );
         cardCustomerDetailsBillLayout.setVerticalGroup(
             cardCustomerDetailsBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+            .addGap(0, 716, Short.MAX_VALUE)
             .addGroup(cardCustomerDetailsBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(cardCustomerDetailsBillLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1275,6 +1312,7 @@ public class home extends javax.swing.JFrame {
         cardCustomerDetailsBill.setVisible(false);
     }//GEN-LAST:event_lbHomePageMouseClicked
 
+
     private void kbtnAddRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kbtnAddRoomActionPerformed
         // TODO add your handling code here:
         String roomNo = tfRoomNumberM.getText();
@@ -1282,7 +1320,26 @@ public class home extends javax.swing.JFrame {
         String bed = (String) cbBedM.getSelectedItem();
         String price = tfPriceM.getText();
 
-        String Query = "INSERT INTO room VALUES('" + roomNo + "', '" + roomType + "', '" + bed + "', '" + price + "', 'Not Booked')";
+        // Kiểm tra các giá trị trống hoặc null
+        if (roomNo.isEmpty() || roomType == null || bed == null || price.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in all the fields.", "Incomplete Information", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Kiểm tra tính hợp lệ của giá trị price
+        int priceText = 0;
+        try {
+            priceText = Integer.parseInt(price);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid integer for price.", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+            return; // Dừng lại nếu giá trị không hợp lệ
+        }
+
+        String img = selectedImagePath != null ? "'" + selectedImagePath + "'" : "NULL";
+
+        String Query = "INSERT INTO room (roomNo, roomType, bed, price, img, status) VALUES ('" + roomNo + "', '" + roomType + "', '" + bed + "', " + price + ", " + img + ", 'Not Booked')";
+
+        // Thực hiện truy vấn sau khi kiểm tra dữ liệu
         InsertUpdateDelete.setData(Query, "Successfully Updated");
 
         // Làm mới dữ liệu trên bảng sau khi thêm phòng thành công
@@ -1300,10 +1357,16 @@ public class home extends javax.swing.JFrame {
         ResultSet rs = Select.getData("select * from room");
         try {
             while (rs.next()) {
-                model.addRow(new Object[]{rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)});
+                // Tạo ImageIcon từ đường dẫn ảnh
+                ImageIcon imageIcon = new ImageIcon(rs.getString(5)); // Cột 5 là đường dẫn ảnh trong ResultSet
+                // Thay đổi kích thước ảnh để phù hợp với kích thước của JLabel
+                Image image = imageIcon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+                ImageIcon scaledIcon = new ImageIcon(image);
+                // Thêm dữ liệu vào table model
+                model.addRow(new Object[]{rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), scaledIcon, rs.getString(6)});
             }
             rs.close();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_cardManageRoomComponentShown
@@ -1620,6 +1683,208 @@ public class home extends javax.swing.JFrame {
             new login().setVisible(true);
         }
     }//GEN-LAST:event_lbLogoutMouseClicked
+
+
+    private void jtbManageRoomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtbManageRoomMouseClicked
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        // Lấy chỉ số hàng được chọn
+        int selectedRow = jtbManageRoom.getSelectedRow();
+        // Kiểm tra xem có hàng được chọn không
+        if (selectedRow >= 0) {
+            // Lấy dữ liệu từ các cột của hàng được chọn
+            String roomNo = jtbManageRoom.getValueAt(selectedRow, 0).toString();
+            // Thực hiện truy vấn cơ sở dữ liệu để lấy thông tin chi tiết của phòng
+            String query = "SELECT * FROM room WHERE RoomNo='" + roomNo + "'";
+            ResultSet rs = Select.getData(query);
+            try {
+                if (rs.next()) {
+                    // Hiển thị thông tin chi tiết của phòng
+                    tfRoomNumberM.setText(rs.getString(1)); // Room Number
+                    cbRoomTypeM.setSelectedItem(rs.getString(2)); // Room Type
+                    cbBedM.setSelectedItem(rs.getString(3)); // Bed
+                    tfPriceM.setText(rs.getString(4)); // Price
+                    // Hiển thị hình ảnh của phòng
+                    String imgPath = rs.getString(5);
+                    ImageIcon imageIcon = new ImageIcon(imgPath); // Tạo ImageIcon từ đường dẫn ảnh
+                    // Thay đổi kích thước ảnh để phù hợp với kích thước của JLabel
+                    Image image = imageIcon.getImage().getScaledInstance(lbImgContainer.getWidth(), lbImgContainer.getHeight(), Image.SCALE_SMOOTH);
+                    ImageIcon scaledIcon = new ImageIcon(image);
+                    // Hiển thị ảnh lên JLabel
+                    lbImgContainer.setIcon(scaledIcon);
+                }
+                rs.close();
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+
+    }//GEN-LAST:event_jtbManageRoomMouseClicked
+
+    private void kbtnResetMRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kbtnResetMRActionPerformed
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        // Xóa dữ liệu trong các trường TextField và ComboBox
+        tfRoomNumberM.setText("");
+        cbRoomTypeM.setSelectedIndex(0);
+        cbBedM.setSelectedIndex(0);
+        tfPriceM.setText("");
+        // Xóa hình ảnh trên JLabel
+        lbImgContainer.setIcon(null);
+        // Xóa đường dẫn hình ảnh đã chọn
+        selectedImagePath = null;
+
+        // Cập nhật lại dữ liệu trong bảng jTable1
+        DefaultTableModel model = (DefaultTableModel) jtbManageRoom.getModel();
+        model.setRowCount(0); // Xóa tất cả các hàng trong bảng
+
+        // Thực hiện truy vấn cơ sở dữ liệu để lấy lại dữ liệu mới cho bảng
+        ResultSet rs = Select.getData("select * from room");
+        try {
+            while (rs.next()) {
+                // Tạo ImageIcon từ đường dẫn ảnh
+                ImageIcon imageIcon = new ImageIcon(rs.getString(5)); // Cột 5 là đường dẫn ảnh trong ResultSet
+                // Thay đổi kích thước ảnh để phù hợp với kích thước của JLabel
+                Image image = imageIcon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+                ImageIcon scaledIcon = new ImageIcon(image);
+                // Thêm dữ liệu vào table model
+                model.addRow(new Object[]{rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), scaledIcon, rs.getString(6)});
+            }
+            rs.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_kbtnResetMRActionPerformed
+
+    private void cbRoomTypeMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbRoomTypeMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbRoomTypeMActionPerformed
+
+    private void tfPriceMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPriceMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfPriceMActionPerformed
+
+    private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        // Lấy số phòng được chọn trong bảng
+        int selectedRow = jtbManageRoom.getSelectedRow();
+        if (selectedRow >= 0) {
+            // Lấy số phòng từ hàng được chọn
+            String roomNo = jtbManageRoom.getValueAt(selectedRow, 0).toString();
+            // Xác nhận việc xóa phòng
+            int confirm = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete room " + roomNo + "?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+            if (confirm == JOptionPane.YES_OPTION) {
+                // Nếu người dùng đồng ý, thực hiện xóa dữ liệu từ cơ sở dữ liệu
+                String query = "DELETE FROM room WHERE RoomNo='" + roomNo + "'";
+                InsertUpdateDelete.setData(query, "Room deleted successfully");
+                // Cập nhật lại giao diện
+                refreshRoomTable();
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select a room to delete.", "No Room Selected", JOptionPane.WARNING_MESSAGE);
+        }
+
+
+    }//GEN-LAST:event_kButton1ActionPerformed
+    private String selectedImagePath; // Biến để lưu đường dẫn của tệp ảnh đã chọn
+
+    private void kbtnUpdateRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kbtnUpdateRoomActionPerformed
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        // Lấy thông tin phòng từ các trường dữ liệu
+        String roomNo = tfRoomNumberM.getText().trim();
+        String roomType = (String) cbRoomTypeM.getSelectedItem();
+        String bed = (String) cbBedM.getSelectedItem();
+        String priceText = tfPriceM.getText().trim();
+
+        // Kiểm tra tính hợp lệ của giá trị price
+        int price = 0;
+        try {
+            price = Integer.parseInt(priceText);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid integer for price.", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+            return; // Dừng lại nếu giá trị không hợp lệ
+        }
+
+        String img = selectedImagePath != null ? "'" + selectedImagePath + "'" : "NULL";
+
+        // Câu lệnh SQL để cập nhật dữ liệu phòng
+        String query = "UPDATE room SET roomType='" + roomType + "', bed='" + bed + "', price=" + price + ", img=" + img + " WHERE RoomNo='" + roomNo + "'";
+        InsertUpdateDelete.setData(query, "Room updated successfully");
+
+        // Cập nhật lại giao diện
+        refreshRoomTable();
+    }//GEN-LAST:event_kbtnUpdateRoomActionPerformed
+
+    private void kbtnFindRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kbtnFindRoomActionPerformed
+        // TODO add your handling code here:
+        // Lấy số phòng nhập vào từ TextField
+        String roomNo = tfRoomNumberM.getText().trim();
+        // Kiểm tra xem người dùng đã nhập số phòng hay chưa
+        if (!roomNo.isEmpty()) {
+            // Xóa tất cả các hàng trong bảng
+            DefaultTableModel model = (DefaultTableModel) jtbManageRoom.getModel();
+            model.setRowCount(0);
+            // Thực hiện truy vấn cơ sở dữ liệu để tìm kiếm phòng
+            String query = "SELECT * FROM room WHERE RoomNo='" + roomNo + "'";
+            ResultSet rs = Select.getData(query);
+            try {
+                if (rs.next()) {
+                    // Hiển thị thông tin chi tiết của phòng
+                    cbRoomTypeM.setSelectedItem(rs.getString(2)); // Room Type
+                    cbBedM.setSelectedItem(rs.getString(3)); // Bed
+                    tfPriceM.setText(rs.getString(4)); // Price
+                    // Hiển thị hình ảnh của phòng
+                    String imgPath = rs.getString(5);
+                    ImageIcon imageIcon = new ImageIcon(imgPath); // Tạo ImageIcon từ đường dẫn ảnh
+                    // Thay đổi kích thước ảnh để phù hợp với kích thước của JLabel
+                    Image image = imageIcon.getImage().getScaledInstance(lbImgContainer.getWidth(), lbImgContainer.getHeight(), Image.SCALE_SMOOTH);
+                    ImageIcon scaledIcon = new ImageIcon(image);
+                    // Hiển thị ảnh lên JLabel
+                    lbImgContainer.setIcon(scaledIcon);
+                    // Thêm hàng tìm thấy vào bảng
+                    model.addRow(new Object[]{rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), scaledIcon, rs.getString(6)});
+                } else {
+                    JOptionPane.showMessageDialog(this, "Room not found.", "Not Found", JOptionPane.WARNING_MESSAGE);
+                }
+                rs.close();
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Please enter room number to find.", "Empty Field", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_kbtnFindRoomActionPerformed
+
+    private void kbtnUploadImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kbtnUploadImgActionPerformed
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        // Khởi tạo một JFileChooser
+        JFileChooser fileChooser = new JFileChooser();
+        // Thiết lập chỉ chọn tệp
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        // Thiết lập bộ lọc để chỉ cho phép chọn các tệp ảnh
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Image Files", "jpg", "jpeg", "png", "gif");
+        fileChooser.setFileFilter(filter);
+
+        // Hiển thị hộp thoại chọn tệp
+        int result = fileChooser.showOpenDialog(this);
+        // Kiểm tra xem người dùng đã chọn một tệp hay không
+        if (result == JFileChooser.APPROVE_OPTION) {
+            // Lấy đường dẫn của tệp ảnh đã chọn
+            File selectedFile = fileChooser.getSelectedFile();
+            selectedImagePath = selectedFile.getAbsolutePath(); // Lưu đường dẫn vào biến selectedImagePath
+
+            // Hiển thị ảnh lên JLabel
+            ImageIcon imageIcon = new ImageIcon(selectedImagePath); // Tạo một ImageIcon từ đường dẫn ảnh
+            // Thay đổi kích thước ảnh để phù hợp với kích thước của JLabel
+            Image image = imageIcon.getImage().getScaledInstance(lbImgContainer.getWidth(), lbImgContainer.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(image);
+            // Hiển thị ảnh lên JLabel
+            lbImgContainer.setIcon(scaledIcon);
+        }
+    }//GEN-LAST:event_kbtnUploadImgActionPerformed
 
     /**
      * @param args the command line arguments

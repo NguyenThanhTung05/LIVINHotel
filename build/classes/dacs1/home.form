@@ -588,7 +588,7 @@
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" pref="398" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" pref="402" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -621,8 +621,8 @@
                                 <Column editable="true" title="Room Type" type="java.lang.Object"/>
                                 <Column editable="true" title="Bed" type="java.lang.Object"/>
                                 <Column editable="true" title="Price" type="java.lang.Object"/>
-                                <Column editable="true" title="Status" type="java.lang.Object"/>
                                 <Column editable="true" title="Image" type="java.lang.Object"/>
+                                <Column editable="true" title="Status" type="java.lang.Object"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -663,6 +663,9 @@
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jtbManageRoomMouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -701,6 +704,9 @@
                           </StringArray>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbRoomTypeMActionPerformed"/>
+                      </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
@@ -744,6 +750,9 @@
                           <Font name="Tahoma" size="14" style="1"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfPriceMActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="com.k33ptoo.components.KButton" name="kbtnAddRoom">
                       <Properties>
@@ -781,6 +790,9 @@
                           <Color blue="0" green="ff" red="87" type="rgb"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kButton1ActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="com.k33ptoo.components.KButton" name="kbtnUpdateRoom">
                       <Properties>
@@ -798,6 +810,9 @@
                           <Color blue="0" green="ff" red="87" type="rgb"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kbtnUpdateRoomActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="com.k33ptoo.components.KButton" name="kbtnFindRoom">
                       <Properties>
@@ -815,6 +830,9 @@
                           <Color blue="0" green="ff" red="87" type="rgb"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kbtnFindRoomActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="com.k33ptoo.components.KButton" name="kbtnResetMR">
                       <Properties>
@@ -838,6 +856,9 @@
                           <Color blue="66" green="66" red="ff" type="rgb"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kbtnResetMRActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="com.k33ptoo.components.KButton" name="kbtnUploadImg">
                       <Properties>
@@ -855,6 +876,9 @@
                           <Color blue="0" green="ff" red="87" type="rgb"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kbtnUploadImgActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lbPicture">
                       <Properties>
@@ -867,15 +891,6 @@
                           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                             <LineBorder thickness="3"/>
                           </Border>
-                        </Property>
-                        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                          <Dimension value="[6, 6]"/>
-                        </Property>
-                        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                          <Dimension value="[6, 6]"/>
-                        </Property>
-                        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                          <Dimension value="[6, 6]"/>
                         </Property>
                       </Properties>
                     </Component>
@@ -1346,7 +1361,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="716" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -1822,7 +1837,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="716" max="32767" attributes="0"/>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>

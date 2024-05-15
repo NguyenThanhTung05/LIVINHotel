@@ -5,7 +5,6 @@
 package project;
 import java.sql.Connection;
 import java.sql.DriverManager;
-
 /**
  *
  * @author ASUS
@@ -16,7 +15,7 @@ public class ConnectionProvider {
         try
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel", "root", "tungitvku2023");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel", "root", "");
             return con;
         }
         catch(Exception e)
