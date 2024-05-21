@@ -1363,15 +1363,6 @@
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="410" max="-2" attributes="0"/>
-                                              <Component id="lbRoomNumCCO" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                                              <Component id="tfRoomNumCCO" min="-2" pref="110" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                                              <Component id="kbtnSearchCCO" min="-2" pref="100" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="kbtnCheckOutCCO" min="-2" pref="110" max="-2" attributes="0"/>
@@ -1398,11 +1389,20 @@
                                                   <Component id="tfCheckOUTDateCCO" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
                                                   <Component id="tfTotalAmountCCO" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="410" max="-2" attributes="0"/>
+                                              <Component id="lbRoomNumCCO" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                                              <Component id="tfRoomNumCCO" min="-2" pref="110" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                              <Component id="kbtnSearchCCO" min="-2" pref="100" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="tfEmailCCO" alignment="1" pref="250" max="32767" attributes="0"/>
+                                          <Component id="tfEmailCCO" alignment="1" pref="313" max="32767" attributes="0"/>
                                           <Component id="lbCustomerMNCCO" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="lbEmailCCO" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="tfCustomerMNCCO" alignment="1" max="32767" attributes="0"/>
